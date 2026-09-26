@@ -1,5 +1,14 @@
 package devPilot.backend.repository;
 
-public class UserRepository {
+import java.util.Optional;
+import java.util.UUID;
+import org.springframework.data.jpa.repository.JpaRepository;
+import devPilot.entity.User;
+
+public interface UserRepository extends JpaRepository<User, UUID>{
+
+    Optional<User> findByGithubId(Long githubId);
+
+
 
 }
