@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 
 import devPilot.backend.services.UserService;
-import devPilot.entity.User;
+import devPilot.backend.entity.User;
 import lombok.RequiredArgsConstructor;
 
 @Service

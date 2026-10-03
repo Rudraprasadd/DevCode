@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 import devPilot.backend.repository.UserRepository;
-import devPilot.entity.User;
+import devPilot.backend.entity.User;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -17,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 public class UserService {
     public final UserRepository userRepository;
     public final TextEncryptor tokenEncryptor;
-
+    
    @Transactional
     public User upsertFromGitHub(Map<String, Object> attributes, String accessToken, String scopes) {
         Long githubId = toLong(attributes.get("id"));
@@ -40,6 +40,7 @@ public class UserService {
         user.setTokenScopes(scopes);
         return userRepository.save(user);
     }
+    
     @Transactional(readOnly = true)
     public User requiredById(UUID id) {
         return userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("User not found"));
@@ -55,7 +56,4 @@ public class UserService {
         }
         return Long.parseLong(String.valueOf(value));
     }
-
-
-
 }

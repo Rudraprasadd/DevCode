@@ -1,4 +1,4 @@
-package devPilot.entity;
+package devPilot.backend.entity;
 
 import java.time.Instant;
 import java.util.UUID;

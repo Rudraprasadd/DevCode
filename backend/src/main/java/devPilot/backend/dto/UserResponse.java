@@ -1,4 +1,4 @@
-package devPilot.backend.exceptions.dto;
+package devPilot.backend.dto;
 
 import java.util.UUID;
 
