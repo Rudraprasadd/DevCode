@@ -1,1 +1,14 @@
 .vscode/
+
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+
+# Environment and local system files
+.env*
+.DS_Store
+
+# Logs
+*.log
